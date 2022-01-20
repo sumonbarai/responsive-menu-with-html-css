@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/d8ce62a5b7.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1170px;
+            padding: 0 12px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: green;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+
+
+        }
+
+        ul li {
+            padding: 10px;
+            transition: background-color .8s ease;
+
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #fff;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
+        ul li.hover-able:hover {
+            background-color: red;
+        }
+        #close-btn {
+                display: none;
+            }
+        section {
+            width: 100%;
+            height: 500px;
+            background-color: hotpink;
+            margin-bottom: 20px;
+        }
+
+        /* responsible menu */
+        #toggle-menu {
+            display: none;
+        }
+
+        .mobile-icon {
+            display: none;
+            color: #fff;
+            outline-offset: 3px;
+            outline: 2px solid #fff;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        @media only screen and (max-width: 992px) {
+            #close-btn {
+                display: block;
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                font-size: 20px;
+                color: #fff;
+                cursor: pointer;
+            }
+            .mobile-icon {
+                display: block;
+            }
+
+            .nav-link {
+                position: absolute;
+                top: 0px;
+                left: 0;
+                width: 100%;
+                background-color: indigo;
+                flex-direction: column;
+                align-items: center;
+                transform: translateY(-300px);
+                transition:  transform .5s ease;
+            }
+            #toggle-menu:checked ~ .nav-link {
+                transform: translateY(0px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="main-menu container">
+            <ul>
+                <li>
+                    <a href="">logo</a>
+                </li>
+            </ul>
+            <input type="checkbox" id="toggle-menu">
+            <label for="toggle-menu"><i class="fas fa-bars mobile-icon"></i></label>
+
+            <ul class="nav-link">
+                <li class="hover-able"><a href="">home</a></li>
+                <li class="hover-able"><a href="">about</a></li>
+                <li class="hover-able"><a href="">blog</a></li>
+                <li class="hover-able"><a href="">contact</a></li>
+                <li class="hover-able"><a href="">service</a></li>
+                <li><label for="toggle-menu" id="close-btn">X</label></li>
+ 
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section></section>
+        <section></section>
+        <section></section>
+
+    </main>
+</body>
+
+</html>
